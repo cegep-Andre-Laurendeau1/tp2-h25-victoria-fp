@@ -1,7 +1,7 @@
-package ca.cal.tp1.service;
+package ca.cal.tp2.service;
 
-import ca.cal.tp1.modele.CD;
-import ca.cal.tp1.repository.CDRepository;
+import ca.cal.tp2.modele.CD;
+import ca.cal.tp2.repository.CDRepository;
 
 public class PreposeService {
     CDRepository cdRepository;

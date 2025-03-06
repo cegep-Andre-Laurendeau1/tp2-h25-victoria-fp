@@ -1,4 +1,4 @@
-package ca.cal.tp1;
+package ca.cal.tp2;
 
 import org.h2.tools.Server;
 

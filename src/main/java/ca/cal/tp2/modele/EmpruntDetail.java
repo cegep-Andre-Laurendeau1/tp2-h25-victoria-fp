@@ -1,4 +1,4 @@
-package ca.cal.tp1.modele;
+package ca.cal.tp2.modele;
 
 import lombok.Data;
 

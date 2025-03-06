@@ -1,6 +1,6 @@
-package ca.cal.tp1.repository;
+package ca.cal.tp2.repository;
 
-import ca.cal.tp1.modele.CD;
+import ca.cal.tp2.modele.CD;
 
 public interface CDRepository {
     public void saveCD(CD cd);
