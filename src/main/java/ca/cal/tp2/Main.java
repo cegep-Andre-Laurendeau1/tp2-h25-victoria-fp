@@ -18,6 +18,10 @@ public class Main {
                 "Dolor Sit Amet", 73, "Conseqtur");
         System.out.println(preposeService.findCDByTitre("ipsum"));
 
+        preposeService.saveCD("Troisieme disque compact", 375,
+                "Jane Doe", 112, "genre");
+        System.out.println(preposeService.findCDByArtiste("jane"));
+
         Thread.currentThread().join();
     }
 }

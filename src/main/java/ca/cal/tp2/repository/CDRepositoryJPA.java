@@ -48,4 +48,17 @@ public class CDRepositoryJPA implements CDRepository {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public CD findCDByArtiste(String artiste) {
+        try {
+            EntityManager em = emf.createEntityManager();
+            TypedQuery<CD> query = em.createQuery("SELECT cd FROM CD cd " +
+                    "WHERE lower(cd.artiste) LIKE ?1", CD.class);
+            query.setParameter(1, "%" + artiste.toLowerCase() + "%");
+            return query.getSingleResult();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

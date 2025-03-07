@@ -22,4 +22,8 @@ public class PreposeService {
     public CD findCDByTitre(String titre) {
         return cdRepository.findCDByTitre(titre);
     }
+
+    public CD findCDByArtiste(String artiste) {
+        return cdRepository.findCDByArtiste(artiste);
+    }
 }

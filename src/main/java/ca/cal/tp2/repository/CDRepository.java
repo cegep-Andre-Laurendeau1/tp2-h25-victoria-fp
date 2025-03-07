@@ -6,4 +6,5 @@ public interface CDRepository {
     public void saveCD(CD cd);
     public CD getCD(Long id);
     public CD findCDByTitre(String titre);
+    public CD findCDByArtiste(String artiste);
 }
