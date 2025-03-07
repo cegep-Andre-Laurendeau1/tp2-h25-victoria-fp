@@ -1,15 +1,24 @@
 package ca.cal.tp2.modele;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
+@Entity
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
-@Data
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type_document")
 public abstract class Document {
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String titre;
     private int nbExemplaires;
+
+    public Document(String titre, int nbExemplaires) {
+        this.titre = titre;
+        this.nbExemplaires = nbExemplaires;
+    }
 }

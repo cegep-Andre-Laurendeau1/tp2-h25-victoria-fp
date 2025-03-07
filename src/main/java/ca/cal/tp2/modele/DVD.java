@@ -10,8 +10,8 @@ public class DVD extends Document {
     private final int duree;
     private final String note;
 
-    public DVD(long id, String titre, int nbExemplaires, String realisateur, int duree, String note) {
-        super(id, titre, nbExemplaires);
+    public DVD(String titre, int nbExemplaires, String realisateur, int duree, String note) {
+        super(titre, nbExemplaires);
         this.realisateur = realisateur;
         this.duree = duree;
         this.note = note;

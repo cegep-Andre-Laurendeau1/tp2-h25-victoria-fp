@@ -1,18 +1,21 @@
 package ca.cal.tp2.modele;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Entity
+@Getter
+@NoArgsConstructor
+@DiscriminatorValue("CD")
 public class CD extends Document {
-    private final String artiste;
-    private final int duree;
-    private final String genre;
+    private String artiste;
+    private int duree;
+    private String genre;
 
-    public CD(long id, String titre, int nbExemplaires, String artiste, int duree, String genre) {
-        super(id, titre, nbExemplaires);
+    public CD(String titre, int nbExemplaires, String artiste, int duree, String genre) {
+        super(titre, nbExemplaires);
         this.artiste = artiste;
         this.duree = duree;
         this.genre = genre;

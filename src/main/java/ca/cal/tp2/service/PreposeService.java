@@ -10,12 +10,12 @@ public class PreposeService {
         this.cdRepository = cdRepository;
     }
 
-    public void saveCD(long id, String titre, int nbExemplaires, String artiste, int duree, String genre) {
-        CD cd = new CD(id, titre, nbExemplaires, artiste, duree, genre);
+    public void saveCD(String titre, int nbExemplaires, String artiste, int duree, String genre) {
+        CD cd = new CD(titre, nbExemplaires, artiste, duree, genre);
         cdRepository.saveCD(cd);
     }
 
-    public CD getCD(long id) {
+    public CD getCD(Long id) {
         return cdRepository.getCD(id);
     }
 }

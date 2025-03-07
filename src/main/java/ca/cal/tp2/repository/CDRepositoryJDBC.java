@@ -43,12 +43,13 @@ public class CDRepositoryJDBC extends RepositoryParentJDBC implements CDReposito
 
     @Override
     protected <T> T getFromResultSet(ResultSet resultSet) throws SQLException {
-        CD cd = new CD(resultSet.getLong("id"),
+        /*CD cd = new CD(resultSet.getLong("id"),
                 resultSet.getString("titre"),
                 resultSet.getInt("nbExemplaires"),
                 resultSet.getString("artiste"),
                 resultSet.getInt("duree"),
                 resultSet.getString("genre"));
-        return (T) cd;
+        return (T) cd;*/
+        return null;
     }
 }
