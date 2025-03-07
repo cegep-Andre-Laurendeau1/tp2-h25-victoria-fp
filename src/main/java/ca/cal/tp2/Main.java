@@ -11,6 +11,7 @@ public class Main {
 
         PreposeService preposeService = new PreposeService(new CDRepositoryJPA());
         preposeService.saveCD("Un titre", 200, "Un Artiste", 57, "metal");
+        System.out.println(preposeService.getCD(1l));
 
         Thread.currentThread().join();
     }
