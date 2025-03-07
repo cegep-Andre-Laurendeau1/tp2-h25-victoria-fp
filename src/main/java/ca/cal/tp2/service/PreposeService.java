@@ -18,4 +18,8 @@ public class PreposeService {
     public CD getCD(Long id) {
         return cdRepository.getCD(id);
     }
+
+    public CD findCDByTitre(String titre) {
+        return cdRepository.findCDByTitre(titre);
+    }
 }
