@@ -1,14 +1,23 @@
 package ca.cal.tp2.modele;
 
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-@Data
+@Entity
+@NoArgsConstructor
+@Getter
 public class EmpruntDetail {
-    private final long id;
-    private final Date dateRetourPrevue;
-    private final Date dateRetourActuelle;
-    private final boolean statut;
-    private final Emprunt emprunt;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private LocalDate dateRetourPrevue;
+    private LocalDate dateRetourActuelle;
+    private boolean statut;
+
+    @ManyToOne
+    @JoinColumn
+    private Emprunt emprunt;
 }
