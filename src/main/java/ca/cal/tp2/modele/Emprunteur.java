@@ -1,13 +1,23 @@
 package ca.cal.tp2.modele;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Entity
+@Getter
+@NoArgsConstructor
+@DiscriminatorValue("emprunteur")
 public class Emprunteur extends Utilisateur {
-    private final List<Amende> amendes;
-    private final List<Emprunt> emprunts;
+    @OneToMany(mappedBy = "emprunteur", cascade = CascadeType.ALL)
+    private List<Amende> amendes;
+
+    @OneToMany(mappedBy = "emprunteur", cascade = CascadeType.ALL)
+    private List<Emprunt> emprunts;
+
+    public Emprunteur(String nom, String prenom, String courriel, String telephone) {
+        super(nom, prenom, courriel, telephone);
+    }
 }
