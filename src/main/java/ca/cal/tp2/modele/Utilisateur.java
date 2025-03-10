@@ -1,16 +1,27 @@
 package ca.cal.tp2.modele;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
-@Data
+@DiscriminatorColumn(name = "type_utilisateur")
 public abstract class Utilisateur {
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String nom;
     private String prenom;
     private String courriel;
     private String telephone;
+
+    public Utilisateur(String nom, String prenom, String courriel, String telephone) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.courriel = courriel;
+        this.telephone = telephone;
+    }
 }
