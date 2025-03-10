@@ -1,12 +1,16 @@
 package ca.cal.tp2.service;
 
 import ca.cal.tp2.modele.CD;
+import ca.cal.tp2.modele.Emprunteur;
 import ca.cal.tp2.repository.CDRepository;
+import ca.cal.tp2.repository.EmprunteurRepository;
 
 public class PreposeService {
+    EmprunteurRepository emprunteurRepository;
     CDRepository cdRepository;
 
-    public PreposeService(CDRepository cdRepository) {
+    public PreposeService(EmprunteurRepository emprunteurRepository, CDRepository cdRepository) {
+        this.emprunteurRepository = emprunteurRepository;
         this.cdRepository = cdRepository;
     }
 
@@ -25,5 +29,10 @@ public class PreposeService {
 
     public CD findCDByArtiste(String artiste) {
         return cdRepository.findCDByArtiste(artiste);
+    }
+
+    public void saveEmprunteur(String nom, String prenom, String courriel, String telephone) {
+        emprunteurRepository.saveEmprunteur(
+                new Emprunteur(nom, prenom, courriel, telephone));
     }
 }
