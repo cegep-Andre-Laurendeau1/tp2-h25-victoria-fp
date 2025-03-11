@@ -25,7 +25,7 @@ public class DVD extends Document {
 
     public String toString() {
         return String.format(
-                "CD(id=%d, titre=%s, nbExemplaires=%d, annee=%d, realisateur=%s, duree=%d, note=%s)",
+                "DVD(id=%d, titre=%s, nbExemplaires=%d, annee=%d, realisateur=%s, duree=%d, note=%s)",
                 getId(), getTitre(), getNbExemplaires(), getAnnee(), getRealisateur(), getDuree(), getNote()
         );
     }

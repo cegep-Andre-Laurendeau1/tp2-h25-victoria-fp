@@ -81,4 +81,12 @@ public class PreposeService {
     public DVD getDVD(Long id) {
         return dvdRepository.getDVD(id);
     }
+
+    public DVD findDVDByTitre(String titre) {
+        return dvdRepository.findDVDByTitre(titre);
+    }
+
+    public DVD findDVDByRealisateur(String realisateur) {
+        return dvdRepository.findDVDByRealisateur(realisateur);
+    }
 }

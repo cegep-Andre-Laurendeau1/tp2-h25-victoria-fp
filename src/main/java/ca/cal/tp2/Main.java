@@ -106,10 +106,17 @@ public class Main {
         System.out.println("Recherche par annee : " + preposeService.findLivreByAnnee(2023) + "\n");
 
         System.out.println("getDVD() : " + preposeService.getDVD(102L));
+        System.out.println("Recherche par titre : " + preposeService.findDVDByTitre("troisieme"));
+        System.out.println("Recherche par realisateur : " +
+                preposeService.findDVDByRealisateur("National Geographic") + "\n");
 
 
         // Création d'un Emprunteur
-        preposeService.saveEmprunteur("Doe", "John", "john.doe@gmail.com", "123-456-7890");
+        preposeService.saveEmprunteur(
+                "Doe",
+                "John",
+                "john.doe@gmail.com",
+                "123-456-7890");
         System.out.println(preposeService.getEmprunteur(1L));
 
 
