@@ -72,7 +72,28 @@ public class Main {
                 "Alire",
                 928);
 
-        preposeService.saveDVD("Le titanic", 120, 1997, "James Cameron", 195, "4.7 etoiles");
+        preposeService.saveDVD(
+                "Le titanic",
+                120,
+                1999,
+                "James Cameron",
+                195,
+                "4.7 etoiles");
+
+        preposeService.saveDVD(
+                "Un documentaire",
+                120, 2000,
+                "National Geographic",
+                195,
+                "3.9 etoiles");
+
+        preposeService.saveDVD(
+                "Troisieme DVD",
+                380,
+                2012,
+                "Real Isateur",
+                156,
+                "2.1 etoiles");
 
 
         System.out.println("getCD() : " + preposeService.getCD(1l));
@@ -83,6 +104,8 @@ public class Main {
         System.out.println("Recherche par titre : " + preposeService.findLivreByTitre("l'"));
         System.out.println("Recherche par auteur : " + preposeService.findLivreByAuteur("Auteur"));
         System.out.println("Recherche par annee : " + preposeService.findLivreByAnnee(2023) + "\n");
+
+        System.out.println("getDVD() : " + preposeService.getDVD(102L));
 
 
         // Création d'un Emprunteur

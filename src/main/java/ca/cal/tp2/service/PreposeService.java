@@ -43,7 +43,8 @@ public class PreposeService {
     }
 
 
-    public void saveLivre(String titre, int nbExemplaires, int annee, String ISBN, String auteur, String editeur, int nbPages) {
+    public void saveLivre(String titre, int nbExemplaires, int annee, String ISBN,
+                          String auteur, String editeur, int nbPages) {
         livreRepository.saveLivre(new Livre(titre, nbExemplaires, annee, ISBN, auteur, editeur, nbPages));
     }
 
@@ -75,5 +76,9 @@ public class PreposeService {
 
     public void saveDVD(String titre, int nbExemplaires, int annee, String realisateur, int duree, String note) {
         dvdRepository.saveDVD(new DVD(titre, nbExemplaires, annee, realisateur, duree, note));
+    }
+
+    public DVD getDVD(Long id) {
+        return dvdRepository.getDVD(id);
     }
 }
