@@ -1,14 +1,20 @@
 package ca.cal.tp2.modele;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+
+@Entity
+@NoArgsConstructor
+@Getter
+@DiscriminatorValue("DVD")
 public class DVD extends Document {
-    private final String realisateur;
-    private final int duree;
-    private final String note;
+    private String realisateur;
+    private int duree;
+    private String note;
+    private int delaiEmprunt = 7;
 
     public DVD(String titre, int nbExemplaires, String realisateur, int duree, String note) {
         super(titre, nbExemplaires);

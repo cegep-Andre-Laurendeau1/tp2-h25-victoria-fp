@@ -1,15 +1,21 @@
 package ca.cal.tp2.modele;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+
+@Entity
+@Getter
+@NoArgsConstructor
+@DiscriminatorValue("livre")
 public class Livre extends Document {
-    private final String ISBN;
-    private final String auteur;
-    private final String editeur;
-    private final int nbPages;
+    private String ISBN;
+    private String auteur;
+    private String editeur;
+    private int nbPages;
+    private int delaiEmprunt = 21;
 
     public Livre(String titre, int nbExemplaires, String ISBN,
                  String auteur, String editeur, int nbPages) {
