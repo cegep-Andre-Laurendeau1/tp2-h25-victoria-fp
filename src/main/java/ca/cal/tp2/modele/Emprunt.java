@@ -31,4 +31,14 @@ public class Emprunt {
         empruntDetails.add(empruntDetail);
         setEmpruntDetails(empruntDetails);
     }
+
+    @Override
+    public String toString() {
+        return "Emprunt(" +
+                "id=" + getId() +
+                ", dateEmprunt=" + getDateEmprunt() +
+                ", statut=" + statut +
+                ", emprunteur=" + getEmprunteur() +
+                ')';
+    }
 }
