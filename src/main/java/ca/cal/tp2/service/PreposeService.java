@@ -35,4 +35,8 @@ public class PreposeService {
         emprunteurRepository.saveEmprunteur(
                 new Emprunteur(nom, prenom, courriel, telephone));
     }
+
+    public Emprunteur getEmprunteur(Long id) {
+        return emprunteurRepository.getEmprunteur(id);
+    }
 }
