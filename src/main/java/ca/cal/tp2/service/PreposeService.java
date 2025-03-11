@@ -1,9 +1,11 @@
 package ca.cal.tp2.service;
 
 import ca.cal.tp2.modele.CD;
+import ca.cal.tp2.modele.DVD;
 import ca.cal.tp2.modele.Emprunteur;
 import ca.cal.tp2.modele.Livre;
 import ca.cal.tp2.repository.CDRepository;
+import ca.cal.tp2.repository.DVDRepository;
 import ca.cal.tp2.repository.EmprunteurRepository;
 import ca.cal.tp2.repository.LivreRepository;
 
@@ -11,12 +13,15 @@ public class PreposeService {
     EmprunteurRepository emprunteurRepository;
     LivreRepository livreRepository;
     CDRepository cdRepository;
+    DVDRepository dvdRepository;
 
     public PreposeService(EmprunteurRepository emprunteurRepository,
-                          LivreRepository livreRepository, CDRepository cdRepository) {
+                          LivreRepository livreRepository, CDRepository cdRepository,
+                          DVDRepository dvdRepository) {
         this.emprunteurRepository = emprunteurRepository;
         this.livreRepository = livreRepository;
         this.cdRepository = cdRepository;
+        this.dvdRepository = dvdRepository;
     }
 
 
@@ -66,5 +71,9 @@ public class PreposeService {
 
     public Emprunteur getEmprunteur(Long id) {
         return emprunteurRepository.getEmprunteur(id);
+    }
+
+    public void saveDVD(String titre, int nbExemplaires, int annee, String realisateur, int duree, String note) {
+        dvdRepository.saveDVD(new DVD(titre, nbExemplaires, annee, realisateur, duree, note));
     }
 }

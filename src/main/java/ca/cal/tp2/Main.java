@@ -1,9 +1,6 @@
 package ca.cal.tp2;
 
-import ca.cal.tp2.repository.CDRepositoryJPA;
-import ca.cal.tp2.repository.EmpruntRepositoryJPA;
-import ca.cal.tp2.repository.EmprunteurRepositoryJPA;
-import ca.cal.tp2.repository.LivreRepositoryJPA;
+import ca.cal.tp2.repository.*;
 import ca.cal.tp2.service.EmprunteurService;
 import ca.cal.tp2.service.PreposeService;
 
@@ -17,7 +14,8 @@ public class Main {
 
         // Création des repositories et des services
         PreposeService preposeService = new PreposeService(
-                new EmprunteurRepositoryJPA(), new LivreRepositoryJPA(), new CDRepositoryJPA()
+                new EmprunteurRepositoryJPA(), new LivreRepositoryJPA(),
+                new CDRepositoryJPA(), new DVDRepositoryJPA()
         );
         EmprunteurService emprunteurService = new EmprunteurService(new EmpruntRepositoryJPA());
 
@@ -74,6 +72,9 @@ public class Main {
                 "Alire",
                 928);
 
+        preposeService.saveDVD("Le titanic", 120, 1997, "James Cameron", 195, "4.7 etoiles");
+
+
         System.out.println("getCD() : " + preposeService.getCD(1l));
         System.out.println("Recherche par titre : " + preposeService.findCDByTitre("ipsum"));
         System.out.println("Recherche par artiste : " + preposeService.findCDByArtiste("jane") + "\n");
@@ -81,7 +82,7 @@ public class Main {
         System.out.println("getLivre() : " + preposeService.getLivre(52L));
         System.out.println("Recherche par titre : " + preposeService.findLivreByTitre("l'"));
         System.out.println("Recherche par auteur : " + preposeService.findLivreByAuteur("Auteur"));
-        System.out.println("Recherche par année : " + preposeService.findLivreByAnnee(2023) + "\n");
+        System.out.println("Recherche par annee : " + preposeService.findLivreByAnnee(2023) + "\n");
 
 
         // Création d'un Emprunteur
