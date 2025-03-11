@@ -1,13 +1,12 @@
 package ca.cal.tp2.service;
 
-import ca.cal.tp2.modele.CD;
-import ca.cal.tp2.modele.DVD;
-import ca.cal.tp2.modele.Emprunteur;
-import ca.cal.tp2.modele.Livre;
+import ca.cal.tp2.modele.*;
 import ca.cal.tp2.repository.CDRepository;
 import ca.cal.tp2.repository.DVDRepository;
 import ca.cal.tp2.repository.EmprunteurRepository;
 import ca.cal.tp2.repository.LivreRepository;
+
+import java.util.List;
 
 public class PreposeService {
     EmprunteurRepository emprunteurRepository;
@@ -73,6 +72,11 @@ public class PreposeService {
     public Emprunteur getEmprunteur(Long id) {
         return emprunteurRepository.getEmprunteur(id);
     }
+
+    public List<Emprunt> getEmprunts(Long emprunteurId) {
+        return emprunteurRepository.getEmprunts(emprunteurId);
+    }
+
 
     public void saveDVD(String titre, int nbExemplaires, int annee, String realisateur, int duree, String note) {
         dvdRepository.saveDVD(new DVD(titre, nbExemplaires, annee, realisateur, duree, note));

@@ -117,7 +117,7 @@ public class Main {
                 "John",
                 "john.doe@gmail.com",
                 "123-456-7890");
-        System.out.println(preposeService.getEmprunteur(1L));
+        System.out.println("Avant emprunt : " + preposeService.getEmprunteur(1L));
 
 
         // Emprunt de documents
@@ -128,6 +128,8 @@ public class Main {
                     preposeService.getCD(2L)
                 )
         );
+        System.out.println("Après emprunt : " + preposeService.getEmprunteur(1L)
+                + preposeService.getEmprunts(1L));
 
         Thread.currentThread().join();
     }
