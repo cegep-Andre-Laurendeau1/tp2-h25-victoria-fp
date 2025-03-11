@@ -23,25 +23,58 @@ public class Main {
 
 
         // Création et recherche de documents
-        preposeService.saveCD("Un titre", 200,
-                "Un Artiste", 57, "metal");
-        System.out.println(preposeService.getCD(1l));
+        preposeService.saveCD(
+                "Un titre",
+                200,
+                "Un Artiste",
+                57,
+                "metal");
 
-        preposeService.saveCD("Lorem ipsum", 150,
-                "Dolor Sit Amet", 73, "Conseqtur");
+        preposeService.saveCD(
+                "Lorem ipsum",
+                150,
+                "Dolor Sit Amet",
+                73,
+                "Conseqtur");
+
+        preposeService.saveCD(
+                "Troisieme disque compact",
+                375,
+                "Jane Doe",
+                112,
+                "genre");
+
+        preposeService.saveLivre(
+                "Un livre",
+                90,
+                "1234567890",
+                "Auteur Quelconque",
+                "Les éditions Editor",
+                98);
+
+        preposeService.saveLivre(
+                "L'Odyssée",
+                500,
+                "7987294727",
+                "Homère",
+                "Les éditions Editor",
+                384);
+
+        preposeService.saveLivre(
+                "Troisieme roman",
+                380,
+                "9999999999",
+                "Nom Original",
+                "Alire",
+                928);
+
+        System.out.println(preposeService.getCD(1l) + "\n");
         System.out.println(preposeService.findCDByTitre("ipsum"));
-
-        preposeService.saveCD("Troisieme disque compact", 375,
-                "Jane Doe", 112, "genre");
         System.out.println(preposeService.findCDByArtiste("jane"));
 
-        preposeService.saveLivre("Un livre", 90, "1234567890",
-                "Auteur Quelconque", "Les éditions Editor", 98);
         System.out.println(preposeService.getLivre(52L));
-
-        preposeService.saveLivre("L'Odyssée", 500, "87987294727",
-                "Homère", "Les éditions Editor", 384);
         System.out.println(preposeService.findLivreByTitre("l'"));
+        System.out.println(preposeService.findLivreByAuteur("Auteur"));
 
 
         // Création d'un Emprunteur

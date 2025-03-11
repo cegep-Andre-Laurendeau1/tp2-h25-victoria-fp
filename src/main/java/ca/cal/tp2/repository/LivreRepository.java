@@ -6,4 +6,5 @@ public interface LivreRepository {
     void saveLivre(Livre livre);
     Livre getLivre(Long id);
     Livre findLivreByTitre(String titre);
+    Livre findLivreByAuteur(String auteur);
 }

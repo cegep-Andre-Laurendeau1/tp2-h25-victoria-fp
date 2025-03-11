@@ -50,6 +50,9 @@ public class PreposeService {
         return livreRepository.findLivreByTitre(titre);
     }
 
+    public Livre findLivreByAuteur(String auteur) {
+        return livreRepository.findLivreByAuteur(auteur);
+    }
 
 
     public void saveEmprunteur(String nom, String prenom, String courriel, String telephone) {
