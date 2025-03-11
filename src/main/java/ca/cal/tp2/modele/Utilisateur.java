@@ -3,12 +3,14 @@ package ca.cal.tp2.modele;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Getter
 @NoArgsConstructor
 @DiscriminatorColumn(name = "type_utilisateur")
+@ToString
 public abstract class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
