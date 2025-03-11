@@ -26,9 +26,13 @@ public class Emprunteur extends Utilisateur {
 
     @Override
     public String toString() {
-        return String.format(
-                "Emprunteur(id=%d, nom=%s, prenom=%s, email=%s, tel=%s)",
-                getId(), getNom(), getPrenom(), getCourriel(), getTelephone()
-        );
+        return "Emprunteur(" +
+                "id=" + getId() +
+                ", nom=" + getNom() +
+                ", prenom=" + getPrenom() +
+                ", courriel=" + getCourriel() +
+                ", telephone=" + getTelephone() +
+                ", emprunts=" + getEmprunts() +
+                ')';
     }
 }

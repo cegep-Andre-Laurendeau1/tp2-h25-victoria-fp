@@ -38,7 +38,6 @@ public class Emprunt {
                 "id=" + getId() +
                 ", dateEmprunt=" + getDateEmprunt() +
                 ", statut=" + statut +
-                ", emprunteur=" + getEmprunteur() +
                 ')';
     }
 }
