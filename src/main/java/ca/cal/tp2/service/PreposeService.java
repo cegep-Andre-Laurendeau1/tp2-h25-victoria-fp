@@ -46,6 +46,12 @@ public class PreposeService {
         return livreRepository.getLivre(id);
     }
 
+    public Livre findLivreByTitre(String titre) {
+        return livreRepository.findLivreByTitre(titre);
+    }
+
+
+
     public void saveEmprunteur(String nom, String prenom, String courriel, String telephone) {
         emprunteurRepository.saveEmprunteur(
                 new Emprunteur(nom, prenom, courriel, telephone));

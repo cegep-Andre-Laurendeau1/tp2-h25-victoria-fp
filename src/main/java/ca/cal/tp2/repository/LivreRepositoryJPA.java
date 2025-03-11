@@ -34,4 +34,17 @@ public class LivreRepositoryJPA implements LivreRepository {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public Livre findLivreByTitre(String titre) {
+        try {
+            EntityManager em = emf.createEntityManager();
+            TypedQuery<Document> query = em.createQuery("SELECT l FROM Livre l " +
+                    "WHERE lower(l.titre) LIKE ?1", Document.class);
+            query.setParameter(1, "%" + titre.toLowerCase() + "%");
+            return (Livre) query.getSingleResult();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

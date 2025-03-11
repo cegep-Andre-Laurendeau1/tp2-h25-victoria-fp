@@ -39,6 +39,10 @@ public class Main {
                 "Auteur Quelconque", "Les éditions Editor", 98);
         System.out.println(preposeService.getLivre(52L));
 
+        preposeService.saveLivre("L'Odyssée", 500, "87987294727",
+                "Homère", "Les éditions Editor", 384);
+        System.out.println(preposeService.findLivreByTitre("l'"));
+
 
         // Création d'un Emprunteur
         preposeService.saveEmprunteur("Doe", "John", "john.doe@gmail.com", "123-456-7890");
