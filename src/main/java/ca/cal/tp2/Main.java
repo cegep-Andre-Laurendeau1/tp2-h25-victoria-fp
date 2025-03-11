@@ -1,9 +1,9 @@
 package ca.cal.tp2;
 
-import ca.cal.tp2.modele.Emprunteur;
 import ca.cal.tp2.repository.CDRepositoryJPA;
 import ca.cal.tp2.repository.EmpruntRepositoryJPA;
 import ca.cal.tp2.repository.EmprunteurRepositoryJPA;
+import ca.cal.tp2.repository.LivreRepositoryJPA;
 import ca.cal.tp2.service.EmprunteurService;
 import ca.cal.tp2.service.PreposeService;
 
@@ -16,11 +16,13 @@ public class Main {
 
 
         // Création des repositories et des services
-        PreposeService preposeService = new PreposeService(new EmprunteurRepositoryJPA(), new CDRepositoryJPA());
+        PreposeService preposeService = new PreposeService(
+                new EmprunteurRepositoryJPA(), new LivreRepositoryJPA(), new CDRepositoryJPA()
+        );
         EmprunteurService emprunteurService = new EmprunteurService(new EmpruntRepositoryJPA());
 
 
-        // Création de CDs
+        // Création et recherche de documents
         preposeService.saveCD("Un titre", 200,
                 "Un Artiste", 57, "metal");
         System.out.println(preposeService.getCD(1l));
@@ -33,16 +35,18 @@ public class Main {
                 "Jane Doe", 112, "genre");
         System.out.println(preposeService.findCDByArtiste("jane"));
 
+        preposeService.saveLivre("Un livre", 90, "1234567890",
+                "Auteur Quelconque", "Les éditions Editor", 98);
+
 
         // Création d'un Emprunteur
         preposeService.saveEmprunteur("Doe", "John", "john.doe@gmail.com", "123-456-7890");
-        Emprunteur emprunteur1 = preposeService.getEmprunteur(1L);
-        System.out.println(emprunteur1);
+        System.out.println(preposeService.getEmprunteur(1L));
 
 
         // Emprunt de documents
         emprunteurService.emprunterDocuments(
-                emprunteur1,
+                preposeService.getEmprunteur(1L),
                 Arrays.asList(
                     preposeService.getCD(1L),
                     preposeService.getCD(2L)
