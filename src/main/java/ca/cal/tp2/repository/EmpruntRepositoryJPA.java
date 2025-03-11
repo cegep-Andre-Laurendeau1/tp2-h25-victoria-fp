@@ -6,6 +6,7 @@ import ca.cal.tp2.modele.EmpruntDetail;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
@@ -24,6 +25,20 @@ public class EmpruntRepositoryJPA implements EmpruntRepository {
             em.getTransaction().commit();
         }
         catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public List<Emprunt> getEmprunts(Long emprunteurId) {
+        try {
+            EntityManager em = emf.createEntityManager();
+
+            TypedQuery<Emprunt> query = em.createQuery("SELECT u.emprunts FROM Emprunteur u " +
+                    "WHERE u.id = :id", Emprunt.class);
+            query.setParameter("id", emprunteurId);
+            return query.getResultList();
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

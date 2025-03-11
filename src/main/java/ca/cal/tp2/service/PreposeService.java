@@ -1,23 +1,23 @@
 package ca.cal.tp2.service;
 
 import ca.cal.tp2.modele.*;
-import ca.cal.tp2.repository.CDRepository;
-import ca.cal.tp2.repository.DVDRepository;
-import ca.cal.tp2.repository.EmprunteurRepository;
-import ca.cal.tp2.repository.LivreRepository;
+import ca.cal.tp2.repository.*;
 
 import java.util.List;
 
 public class PreposeService {
     EmprunteurRepository emprunteurRepository;
+    EmpruntRepository empruntRepository;
     LivreRepository livreRepository;
     CDRepository cdRepository;
     DVDRepository dvdRepository;
 
     public PreposeService(EmprunteurRepository emprunteurRepository,
+                          EmpruntRepository empruntRepository,
                           LivreRepository livreRepository, CDRepository cdRepository,
                           DVDRepository dvdRepository) {
         this.emprunteurRepository = emprunteurRepository;
+        this.empruntRepository = empruntRepository;
         this.livreRepository = livreRepository;
         this.cdRepository = cdRepository;
         this.dvdRepository = dvdRepository;
@@ -74,7 +74,7 @@ public class PreposeService {
     }
 
     public List<Emprunt> getEmprunts(Long emprunteurId) {
-        return emprunteurRepository.getEmprunts(emprunteurId);
+        return empruntRepository.getEmprunts(emprunteurId);
     }
 
 

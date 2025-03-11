@@ -14,13 +14,13 @@ public class Main {
 
         // Création des repositories et des services
         PreposeService preposeService = new PreposeService(
-                new EmprunteurRepositoryJPA(), new LivreRepositoryJPA(),
+                new EmprunteurRepositoryJPA(), new EmpruntRepositoryJPA(), new LivreRepositoryJPA(),
                 new CDRepositoryJPA(), new DVDRepositoryJPA()
         );
         EmprunteurService emprunteurService = new EmprunteurService(new EmpruntRepositoryJPA());
 
 
-        // Création et recherche de documents
+        // Création de documents
         preposeService.saveCD(
                 "Un titre",
                 200,
@@ -96,6 +96,7 @@ public class Main {
                 "2.1 etoiles");
 
 
+        // Recherche de documents
         System.out.println("getCD() : " + preposeService.getCD(1l));
         System.out.println("Recherche par titre : " + preposeService.findCDByTitre("ipsum"));
         System.out.println("Recherche par artiste : " + preposeService.findCDByArtiste("jane") + "\n");
@@ -128,8 +129,7 @@ public class Main {
                     preposeService.getCD(2L)
                 )
         );
-        System.out.println("Après emprunt : " + preposeService.getEmprunteur(1L)
-                + preposeService.getEmprunts(1L));
+        System.out.println("Après emprunt : " + preposeService.getEmprunteur(1L));
 
         Thread.currentThread().join();
     }

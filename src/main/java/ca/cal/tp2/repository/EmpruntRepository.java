@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface EmpruntRepository {
     void saveEmprunt(Emprunt emprunt, EmpruntDetail empruntDetail, List<Document> documents);
+    List<Emprunt> getEmprunts(Long emprunteurId);
 }
