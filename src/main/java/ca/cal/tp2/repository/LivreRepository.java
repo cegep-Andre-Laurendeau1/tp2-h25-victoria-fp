@@ -7,4 +7,5 @@ public interface LivreRepository {
     Livre getLivre(Long id);
     Livre findLivreByTitre(String titre);
     Livre findLivreByAuteur(String auteur);
+    Livre findLivreByAnnee(int annee);
 }

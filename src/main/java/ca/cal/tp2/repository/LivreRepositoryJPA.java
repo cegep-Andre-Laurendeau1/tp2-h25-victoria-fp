@@ -60,4 +60,17 @@ public class LivreRepositoryJPA implements LivreRepository {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public Livre findLivreByAnnee(int annee) {
+        try {
+            EntityManager em = emf.createEntityManager();
+            TypedQuery<Document> query = em.createQuery("SELECT l FROM Document l " +
+                    "WHERE l.annee = :annee", Document.class);
+            query.setParameter("annee", annee);
+            return (Livre) query.getSingleResult();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

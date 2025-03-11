@@ -74,14 +74,14 @@ public class Main {
                 "Alire",
                 928);
 
-        System.out.println(preposeService.getCD(1l));
-        System.out.println(preposeService.findCDByTitre("ipsum"));
-        System.out.println(preposeService.findCDByArtiste("jane") + "\n");
+        System.out.println("getCD() : " + preposeService.getCD(1l));
+        System.out.println("Recherche par titre : " + preposeService.findCDByTitre("ipsum"));
+        System.out.println("Recherche par artiste : " + preposeService.findCDByArtiste("jane") + "\n");
 
-        System.out.println(preposeService.getLivre(52L));
-        System.out.println(preposeService.findLivreByTitre("l'"));
-        System.out.println(preposeService.findLivreByAuteur("Auteur"));
-        System.out.println(preposeService.findLivreByAuteur("Auteur") + "\n");
+        System.out.println("getLivre() : " + preposeService.getLivre(52L));
+        System.out.println("Recherche par titre : " + preposeService.findLivreByTitre("l'"));
+        System.out.println("Recherche par auteur : " + preposeService.findLivreByAuteur("Auteur"));
+        System.out.println("Recherche par année : " + preposeService.findLivreByAnnee(2023) + "\n");
 
 
         // Création d'un Emprunteur
