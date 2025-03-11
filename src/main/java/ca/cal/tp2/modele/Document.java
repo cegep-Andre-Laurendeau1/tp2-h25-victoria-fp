@@ -19,13 +19,15 @@ public abstract class Document {
     private String titre;
     private int nbExemplaires;
     private int delaiEmprunt;
+    private int annee;
 
     @ManyToOne
     @JoinColumn
     EmpruntDetail empruntDetail;
 
-    public Document(String titre, int nbExemplaires) {
+    public Document(String titre, int nbExemplaires, int annee) {
         this.titre = titre;
         this.nbExemplaires = nbExemplaires;
+        this.annee = annee;
     }
 }

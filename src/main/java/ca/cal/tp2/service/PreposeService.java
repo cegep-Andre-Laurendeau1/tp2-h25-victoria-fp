@@ -20,8 +20,8 @@ public class PreposeService {
     }
 
 
-    public void saveCD(String titre, int nbExemplaires, String artiste, int duree, String genre) {
-        CD cd = new CD(titre, nbExemplaires, artiste, duree, genre);
+    public void saveCD(String titre, int nbExemplaires, int annee, String artiste, int duree, String genre) {
+        CD cd = new CD(titre, nbExemplaires, annee, artiste, duree, genre);
         cdRepository.saveCD(cd);
     }
 
@@ -38,8 +38,8 @@ public class PreposeService {
     }
 
 
-    public void saveLivre(String titre, int nbExemplaires, String ISBN, String auteur, String editeur, int nbPages) {
-        livreRepository.saveLivre(new Livre(titre, nbExemplaires, ISBN, auteur, editeur, nbPages));
+    public void saveLivre(String titre, int nbExemplaires, int annee, String ISBN, String auteur, String editeur, int nbPages) {
+        livreRepository.saveLivre(new Livre(titre, nbExemplaires, annee, ISBN, auteur, editeur, nbPages));
     }
 
     public Livre getLivre(Long id) {

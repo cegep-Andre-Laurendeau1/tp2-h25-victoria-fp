@@ -16,8 +16,8 @@ public class DVD extends Document {
     private String note;
     private int delaiEmprunt = 7;
 
-    public DVD(String titre, int nbExemplaires, String realisateur, int duree, String note) {
-        super(titre, nbExemplaires);
+    public DVD(String titre, int nbExemplaires, int annee, String realisateur, int duree, String note) {
+        super(titre, nbExemplaires, annee);
         this.realisateur = realisateur;
         this.duree = duree;
         this.note = note;
@@ -25,8 +25,8 @@ public class DVD extends Document {
 
     public String toString() {
         return String.format(
-                "CD(id=%d, titre=%s, nbExemplaires=%d, realisateur=%s, duree=%d, note=%s)",
-                getId(), getTitre(), getNbExemplaires(), getRealisateur(), getDuree(), getNote()
+                "CD(id=%d, titre=%s, nbExemplaires=%d, annee=%d, realisateur=%s, duree=%d, note=%s)",
+                getId(), getTitre(), getNbExemplaires(), getAnnee(), getRealisateur(), getDuree(), getNote()
         );
     }
 }

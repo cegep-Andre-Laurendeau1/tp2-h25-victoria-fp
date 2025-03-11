@@ -26,6 +26,7 @@ public class Main {
         preposeService.saveCD(
                 "Un titre",
                 200,
+                1992,
                 "Un Artiste",
                 57,
                 "metal");
@@ -33,6 +34,7 @@ public class Main {
         preposeService.saveCD(
                 "Lorem ipsum",
                 150,
+                2001,
                 "Dolor Sit Amet",
                 73,
                 "Conseqtur");
@@ -40,6 +42,7 @@ public class Main {
         preposeService.saveCD(
                 "Troisieme disque compact",
                 375,
+                2005,
                 "Jane Doe",
                 112,
                 "genre");
@@ -47,6 +50,7 @@ public class Main {
         preposeService.saveLivre(
                 "Un livre",
                 90,
+                1903,
                 "1234567890",
                 "Auteur Quelconque",
                 "Les éditions Editor",
@@ -55,6 +59,7 @@ public class Main {
         preposeService.saveLivre(
                 "L'Odyssée",
                 500,
+                -709,
                 "7987294727",
                 "Homère",
                 "Les éditions Editor",
@@ -63,18 +68,20 @@ public class Main {
         preposeService.saveLivre(
                 "Troisieme roman",
                 380,
+                2023,
                 "9999999999",
                 "Nom Original",
                 "Alire",
                 928);
 
-        System.out.println(preposeService.getCD(1l) + "\n");
+        System.out.println(preposeService.getCD(1l));
         System.out.println(preposeService.findCDByTitre("ipsum"));
-        System.out.println(preposeService.findCDByArtiste("jane"));
+        System.out.println(preposeService.findCDByArtiste("jane") + "\n");
 
         System.out.println(preposeService.getLivre(52L));
         System.out.println(preposeService.findLivreByTitre("l'"));
         System.out.println(preposeService.findLivreByAuteur("Auteur"));
+        System.out.println(preposeService.findLivreByAuteur("Auteur") + "\n");
 
 
         // Création d'un Emprunteur

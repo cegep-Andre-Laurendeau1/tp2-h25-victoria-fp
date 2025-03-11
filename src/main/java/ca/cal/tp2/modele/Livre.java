@@ -17,9 +17,9 @@ public class Livre extends Document {
     private int nbPages;
     private int delaiEmprunt = 21;
 
-    public Livre(String titre, int nbExemplaires, String ISBN,
+    public Livre(String titre, int nbExemplaires, int annee, String ISBN,
                  String auteur, String editeur, int nbPages) {
-        super(titre, nbExemplaires);
+        super(titre, nbExemplaires, annee);
         this.ISBN = ISBN;
         this.auteur = auteur;
         this.editeur = editeur;
@@ -28,8 +28,8 @@ public class Livre extends Document {
 
     public String toString() {
         return String.format(
-                "Livre(id=%d, titre=%s, nbExemplaires=%d, ISBN=%s, auteur=%s, editeur=%s, nbPages=%d)",
-                getId(), getTitre(), getNbExemplaires(), getISBN(), getAuteur(), getEditeur(), getNbPages()
+                "Livre(id=%d, titre=%s, nbExemplaires=%d, annee=%d, ISBN=%s, auteur=%s, editeur=%s, nbPages=%d)",
+                getId(), getTitre(), getNbExemplaires(), getAnnee(), getISBN(), getAuteur(), getEditeur(), getNbPages()
         );
     }
 }
