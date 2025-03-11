@@ -4,4 +4,5 @@ import ca.cal.tp2.modele.Livre;
 
 public interface LivreRepository {
     void saveLivre(Livre livre);
+    Livre getLivre(Long id);
 }

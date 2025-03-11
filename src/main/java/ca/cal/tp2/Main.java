@@ -37,6 +37,7 @@ public class Main {
 
         preposeService.saveLivre("Un livre", 90, "1234567890",
                 "Auteur Quelconque", "Les éditions Editor", 98);
+        System.out.println(preposeService.getLivre(52L));
 
 
         // Création d'un Emprunteur

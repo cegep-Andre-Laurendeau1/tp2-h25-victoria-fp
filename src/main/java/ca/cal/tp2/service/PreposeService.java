@@ -42,6 +42,9 @@ public class PreposeService {
         livreRepository.saveLivre(new Livre(titre, nbExemplaires, ISBN, auteur, editeur, nbPages));
     }
 
+    public Livre getLivre(Long id) {
+        return livreRepository.getLivre(id);
+    }
 
     public void saveEmprunteur(String nom, String prenom, String courriel, String telephone) {
         emprunteurRepository.saveEmprunteur(
