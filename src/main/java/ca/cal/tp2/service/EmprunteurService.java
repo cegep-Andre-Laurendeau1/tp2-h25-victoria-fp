@@ -19,6 +19,14 @@ public class EmprunteurService {
 
     public void emprunterDocuments(Emprunteur emprunteur, List<Document> documents) {
 
+        // Vérification de la disponibilité des documents
+        documents.forEach(document -> {
+            if (!isDocumentDisponible(document)) {
+                throw new RuntimeException("Le document " + document.getTitre() + " est indisponible.");
+            }
+        });
+
+
         // Création d'un EmpruntDetail
         EmpruntDetail empruntDetail = new EmpruntDetail();
 
@@ -34,5 +42,9 @@ public class EmprunteurService {
         emprunt.setEmprunteur(emprunteur);
 
         empruntRepository.saveEmprunt(emprunt, empruntDetail, documents);
+    }
+
+    private boolean isDocumentDisponible(Document document) {
+        return document.getNbExemplaires() - empruntRepository.getNbEmpruntDetails(document) > 0;
     }
 }
