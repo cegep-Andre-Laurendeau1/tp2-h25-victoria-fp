@@ -13,14 +13,13 @@ public class CD extends Document {
     private String artiste;
     private int duree;
     private String genre;
-    private int delaiEmprunt;
+    private int delaiEmprunt = 14;
 
     public CD(String titre, int nbExemplaires, int annee, String artiste, int duree, String genre) {
         super(titre, nbExemplaires, annee);
         this.artiste = artiste;
         this.duree = duree;
         this.genre = genre;
-        this.delaiEmprunt = 14;
     }
 
     public String toString() {

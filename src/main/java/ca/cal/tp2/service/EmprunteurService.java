@@ -1,13 +1,11 @@
 package ca.cal.tp2.service;
 
-import ca.cal.tp2.modele.Document;
-import ca.cal.tp2.modele.Emprunt;
-import ca.cal.tp2.modele.EmpruntDetail;
-import ca.cal.tp2.modele.Emprunteur;
+import ca.cal.tp2.modele.*;
 import ca.cal.tp2.repository.EmpruntRepository;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 
 public class EmprunteurService {
@@ -31,7 +29,8 @@ public class EmprunteurService {
         EmpruntDetail empruntDetail = new EmpruntDetail();
 
         LocalDate dateEmprunt = LocalDate.now();
-        LocalDate dateRetourPrevue = dateEmprunt.plusDays(documents.get(0).getDelaiEmprunt());
+        LocalDate dateRetourPrevue = dateEmprunt.plusDays(21);
+
         empruntDetail.setDateRetourPrevue(dateRetourPrevue);
 
 
